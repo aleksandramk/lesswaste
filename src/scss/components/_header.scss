@@ -1,0 +1,53 @@
+header{
+    display:flex;
+    flex-direction: column;
+    padding-right: 142px;
+    padding-top: 37px;
+}
+
+.header-nav{
+    
+}
+
+.header-nav-list{
+    display: flex;
+    justify-content: flex-end;
+    color: map-get($basicColors,"fontLight");
+
+    li{
+        padding:10px;
+    }
+    
+    a{
+        padding:5px; 
+        text-decoration: none;
+        }
+    
+   li:last-child{
+    border: solid 0.75px map-get($basicColors, "appTheme");   
+    }
+    
+}
+
+
+.header-menu-list{
+    display:flex;
+    justify-content: flex-end;
+    
+
+    li{
+        padding:10px;
+    }
+
+    a{
+        padding:5px;
+        text-decoration: none;
+    }
+
+    li:first-child{
+        border: solid 0.75px map-get($basicColors, "fontDark");
+    }
+    
+
+
+}

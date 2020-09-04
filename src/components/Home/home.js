@@ -1,10 +1,15 @@
 import React from 'react';
-
+import Banner from './banner';
 
 
 function Home() {
   return (
-    <h1>Home Page</h1>
+    <div className="home-page" id="home">
+      
+      <Banner/>
+
+    </div>
+    
   )
 }
 

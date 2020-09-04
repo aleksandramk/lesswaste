@@ -3,18 +3,15 @@ import {Link} from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav>
-        <ul>
-            <Link to='/login'>
-                <li>Login</li>
-            </Link>
-
-            <Link to='/register'>
-                <li>Register</li>
-            </Link>
-            
-            
-
+    <nav className="header-nav">
+        <ul className="header-nav-list">
+          <li>
+          <Link to='/login'>Zaloguj</Link>
+          </li>
+          <li>
+          <Link to='/register'>Załóż konto</Link>
+          </li>
+          
         </ul>
     </nav>
   )
