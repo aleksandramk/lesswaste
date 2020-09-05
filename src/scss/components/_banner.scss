@@ -1,16 +1,82 @@
+#home-page-banner {
+    display: flex;
+    height: 820px;
+    padding-right: 142px;
+    justify-content: center;
+    .container{
+        justify-content: center;
 
-.home-page-banner{
-    display:flex;
-    justify-content: space-around;
-   
+}
 }
 
-.banner-img{
+.banner-img {
+    display: flex;
+    contain: "";
+    height: 100%;
+    width: 50%;
     
 
-    .banner-img-picture{
-        position:fixed;
-        top: -50px;
-        left: -300px;
+    .banner-img-picture {
+        position: absolute;
+        left: -500px;
+        top: -20px;
+        z-index: -3;
+        object-fit: cover;
+
+    }
+}
+
+.banner-text {
+   
+    color: map-get($basicColors, "fontDark");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow:1;
+
+    h2 {
+        display: flex;
+        flex-direction: column;
+        font-size: 2em;
+        align-items: center;
+
+        span {
+            padding: 0.7rem;
+        }
+
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+
+
+            width: 310px;
+            height: 120px;
+            border: 0.75px solid map-get($basicColors, "fontLight");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2em;
+
+
+            a {
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 2em;
+                font-weight: 200;
+                padding: 13px 92px 13px 92px;
+            }
+
+            a:visited {
+                color: map-get($basicColors, "fontDark");
+                text-decoration: none;
+            }
+
+        }
     }
 }

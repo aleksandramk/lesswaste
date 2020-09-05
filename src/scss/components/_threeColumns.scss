@@ -1,0 +1,32 @@
+#threeColumns{
+    display: flex;
+    height: 380px;
+    background-image: url('/images/3ColumnsBg.png');
+    background-size: cover;
+    justify-content: center;
+
+    article{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: map-get($basicColors,"fontDark");
+        padding:8em;
+
+        span{
+            font-size:5.6em;
+            color: map-get($basicColors,"navigationBg");
+            padding:5px;
+        }
+
+        .col-title{
+            font-size:1.1em;
+            text-transform: uppercase;
+            padding:2em;
+        }
+
+        .col-text{
+            text-align: center;
+        }
+    }
+}

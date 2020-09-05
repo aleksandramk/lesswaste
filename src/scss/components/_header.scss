@@ -3,6 +3,13 @@ header{
     flex-direction: column;
     padding-right: 142px;
     padding-top: 37px;
+    position:relative;
+    
+    a:visited{
+        color: map-get($basicColors,"fontDark");
+        text-decoration: none;
+       }
+    
 }
 
 .header-nav{
@@ -10,9 +17,11 @@ header{
 }
 
 .header-nav-list{
+    font-size:0.85em;
     display: flex;
     justify-content: flex-end;
     color: map-get($basicColors,"fontLight");
+    padding-bottom:10px;
 
     li{
         padding:10px;
@@ -33,10 +42,11 @@ header{
 .header-menu-list{
     display:flex;
     justify-content: flex-end;
-    
+    font-size:1.1em;
+    color: map-get($basicColors,"fontDark");
 
     li{
-        padding:10px;
+        padding:10px 20px 10px 20px;
     }
 
     a{

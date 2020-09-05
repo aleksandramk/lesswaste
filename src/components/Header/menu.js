@@ -12,16 +12,16 @@ function Menu() {
                 <Link to='home' smooth={true} duration={1000}> Start </Link>
             </li>
             <li>
-                <Link to='/register'>O co chodzi?</Link>
+                <Link to='/'>O co chodzi?</Link>
             </li>
             <li>
-                <Link to='/register'>O nas</Link>
+                <Link to='/'>O nas</Link>
             </li>
             <li>
-                <Link to='/register'>Fundacja i organizacje</Link>
+                <Link to='/'>Fundacja i organizacje</Link>
             </li>
             <li>
-                <Link to='/register'>Kontakt</Link>
+                <Link to='/'>Kontakt</Link>
             </li>
         </ul>
     </nav>
