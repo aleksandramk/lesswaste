@@ -1,37 +1,43 @@
-#aboutUs{
+#aboutUs {
     height: 930px;
     display: flex;
     justify-content: center;
-    color: map-get($basicColors,"fontDark");
+    color: map-get($basicColors, "fontDark");
+    background-color: map-get($basicColors, "bgGrey");
 }
 
-.aboutUs-text{
-    display:flex;
+.aboutUs-text {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-    h3{
-        font-size:2.2em;
-        padding:1em;
+
+    h3 {
+        font-size: 2.2em;
+        padding: 1em;
     }
-    p{
-        font-size:2em;
+
+    p {
+        font-size: 2em;
         text-align: center;
-        padding:2em 4em 2em 4em;
+        padding: 2em 4em 2em 4em;
         line-height: 1.5em;
     }
-    .aboutUs-signature{
-        float:right;
+
+    .aboutUs-signature {
+       align-self: flex-end;
+       padding-right:8em;
     }
 }
 
 
-.aboutUs-img{
-    width:50%;
+.aboutUs-img {
+    width: 50%;
     overflow: hidden;
-    img{
+
+    img {
         max-height: 100%;
     }
-   
+
 }

@@ -1,15 +1,9 @@
 #fourSteps{
     display:flex;
+    flex-direction: column;
     height: 800px;
     justify-content: center;
     color: map-get($basicColors,"fontDark");
-
-    .container{
-        justify-self:center;
-        flex-direction: column;
-        width: 100%;
-        
-    }
     
 }
 
@@ -28,6 +22,9 @@
 }
 
 .fourSteps-highlight{
+    .container{
+        justify-content: space-between;
+    }
     
     display:flex;
     justify-content: space-evenly;

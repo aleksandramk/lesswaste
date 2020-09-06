@@ -4,6 +4,8 @@ import ThreeColumns from './threeColumns';
 import FourSteps from './fourSteps';
 import AboutUs from './aboutUs';
 import WhoWeHelp from './whoWeHelp';
+import Contact from '../Contact/contact';
+import Footer from '../Footer/footer';
 
 
 function Home() {
@@ -14,8 +16,10 @@ function Home() {
       <ThreeColumns/>
       <FourSteps/>
       <AboutUs/>
+      <WhoWeHelp/>
+      <Contact/>
+      <Footer/>
      
-
     </div>
     
   )

@@ -5,16 +5,16 @@ function FourSteps() {
   return (
     <section id ="fourSteps">
 
-        <div className="container">
+        
 
         <div className="fourSteps-title">
             <h3>Wystarczą 4 proste kroki</h3>
             <div><img src="/images/Decoration.svg"/></div>
          </div>
 
-         
-
          <div className="fourSteps-highlight">
+         <div className="container">
+           
             <article className ="step1">
                         <div><img src="/images/Icon-1.svg"/></div>
                         <h3 className="step-title">Wybierz rzeczy</h3>
@@ -38,10 +38,11 @@ function FourSteps() {
                         <p className ="step-text">kurier przyjedzie w dogodnym terminie</p>
             </article>
         </div>
+        </div>
         
             <div className="returnBtn"><Link to='/register'>Oddaj rzeczy</Link></div>
 
-            </div>
+            
 </section>
   )
 }

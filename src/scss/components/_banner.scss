@@ -1,39 +1,35 @@
 #home-page-banner {
     display: flex;
     height: 820px;
-    padding-right: 142px;
     justify-content: center;
     .container{
         justify-content: center;
-
+        
 }
 }
 
 .banner-img {
-    display: flex;
-    contain: "";
-    height: 100%;
-    width: 50%;
-    
+    width: 40%;  
+    position:relative;
 
-    .banner-img-picture {
-        position: absolute;
-        left: -500px;
-        top: -20px;
-        z-index: -3;
-        object-fit: cover;
-
+    img {
+        position:absolute;
+        left:-400px;
+        top:-130px;
+        z-index:-1;
+ 
     }
+
 }
 
 .banner-text {
-   
+    width:60%;
     color: map-get($basicColors, "fontDark");
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow:1;
+   
 
     h2 {
         display: flex;

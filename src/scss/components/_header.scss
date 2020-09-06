@@ -1,63 +1,65 @@
-header{
-    display:flex;
-    flex-direction: column;
-    padding-right: 142px;
-    padding-top: 37px;
-    position:relative;
-    
-    a:visited{
-        color: map-get($basicColors,"fontDark");
+header {
+    display: flex;
+    justify-content: center;
+    height: 110px;
+    padding-bottom: 2em;
+
+    .container {
+        flex-direction: column;
+        justify-content: flex-end;
+        
+        
+    }
+
+    a:visited {
+        color: map-get($basicColors, "fontDark");
         text-decoration: none;
-       }
-    
+    }
+
 }
 
-.header-nav{
-    
-}
-
-.header-nav-list{
-    font-size:0.85em;
+.header-nav-list {
+    font-size: 0.85em;
     display: flex;
     justify-content: flex-end;
-    color: map-get($basicColors,"fontLight");
-    padding-bottom:10px;
+    color: map-get($basicColors, "fontLight");
+    padding-bottom: 10px;
 
-    li{
-        padding:10px;
+    li {
+        padding: 10px;
     }
-    
-    a{
-        padding:5px; 
+
+    a {
+        padding: 5px;
         text-decoration: none;
-        }
-    
-   li:last-child{
-    border: solid 0.75px map-get($basicColors, "appTheme");   
     }
-    
+
+    li:last-child {
+        border: solid 0.75px map-get($basicColors, "appTheme");
+    }
+
 }
 
 
-.header-menu-list{
-    display:flex;
+.header-menu-list {
+    display: flex;
     justify-content: flex-end;
-    font-size:1.1em;
-    color: map-get($basicColors,"fontDark");
+    font-size: 1.1em;
+    color: map-get($basicColors, "fontDark");
 
-    li{
-        padding:10px 20px 10px 20px;
+    li {
+        padding: 10px 20px 10px 20px;
     }
 
-    a{
-        padding:5px;
+    a {
+        padding: 5px;
         text-decoration: none;
     }
 
-    li:first-child{
+    li:first-child {
         border: solid 0.75px map-get($basicColors, "fontDark");
     }
-    
+
 
 
 }

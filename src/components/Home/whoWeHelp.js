@@ -3,25 +3,19 @@ import React from 'react';
 
 
 function WhoWeHelp() {
+
   return (
     <section id="whoWeHelp">
       <div className="container">
 
-      <div className="whoWeHelp-text">
+      <div className="whoWeHelp-title">
 
-         <h3>O nas</h3>
-             <div><img src="/images/Decoration.svg"/></div>
-
+        <h3>Komu pomagamy?</h3>
+        <div><img src="/images/Decoration.svg"/></div>
         
       </div>
 
-      <div className="whoWeHelp-img">
-        <img className ="whoWeHelp-img-picture" src="/images/People.jpg" alt="WhoWeHelp" />
-
-
-          
-        
-      </div>
+      <p>FUNDACJE ORGANIZACJE ZBORKI</p>
       </div>
 
     </section>

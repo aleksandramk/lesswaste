@@ -6,8 +6,10 @@ import Menu from './menu';
 function Header() {
   return (
    <header>
-   <Nav/>
-   <Menu/>
+     <div className="container">
+      <Nav/>
+      <Menu/>
+   </div>
    </header>
   )
 }

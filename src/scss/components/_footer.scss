@@ -1,0 +1,22 @@
+#footer{
+    display:flex;
+    justify-content: center;
+    color:map-get($basicColors, "fontDark");
+    height:50px;
+    .container{
+        justify-content: center;
+        align-items: center;
+        position:relative;
+    }
+}
+
+.socialMedia{
+    display:flex;
+    position:absolute;
+    right:10em;
+
+
+    li{
+        padding:0.5em;
+    }
+}
