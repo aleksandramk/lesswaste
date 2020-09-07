@@ -16,10 +16,10 @@ function Banner() {
           <div><img src="/images/Decoration.svg"/></div>
           <ul>
               <li>
-                <Link to='/register'>Oddaj rzeczy</Link>
+                <Link to='/login'>Oddaj rzeczy</Link>
               </li>
               <li>
-                <Link to='/register'>Zorganizuj zbiórkę</Link>
+                <Link to='/login'>Zorganizuj zbiórkę</Link>
               </li>
           </ul>
       </div>

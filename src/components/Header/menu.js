@@ -9,7 +9,7 @@ function Menu() {
     <nav className="header-menu">
         <ul className="header-menu-list">
             <li>
-                <Link to='home' smooth={true} duration={500}> Start </Link>
+                <Link to='/'> Start </Link>
             </li>
             <li>
                 <Link to='fourSteps' smooth={true} duration={500}>O co chodzi?</Link>

@@ -40,7 +40,7 @@ function FourSteps() {
         </div>
         </div>
         
-            <div className="returnBtn"><Link to='/register'>Oddaj rzeczy</Link></div>
+            <div className="returnBtn"><Link to='/login'>Oddaj rzeczy</Link></div>
 
             
 </section>

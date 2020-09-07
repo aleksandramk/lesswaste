@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import {Link} from 'react-router-dom';
 
 function Login() {
 
@@ -22,7 +22,7 @@ function Login() {
           <form onSubmit={handleSubmit} className="loginForm">
                 
                     <label>Email
-                        <textarea className="form-control" type="email" name="name" value={email}
+                        <textarea className="form-control" type="email" name="email" value={email}
                             onChange={e => setEmail(e.target.value)}/>
                     </label>
 
@@ -31,11 +31,15 @@ function Login() {
                             onChange={e => setPassword(e.target.value)}/>
                     </label>
 
-                    <div className="loginButtons">
-                      <input className="btn-login" type="submit" value="Zaloguj się"/>
-                      <input className="btn-createAccount" type="submit" value="Załóż konto"/>
-                    </div>
+                    
             </form>
+            <div className="loginButtons">
+
+                  <Link to='/register'>Zarejestruj się</Link>
+                  <input className="btn-login" type="submit" value="Zaloguj się"/>
+                  
+                
+            </div>
            
     </div>
 

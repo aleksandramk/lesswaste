@@ -27,6 +27,7 @@ header {
 
     li {
         padding: 10px;
+        border: solid 0.75px white;
     }
 
     a {
@@ -34,7 +35,7 @@ header {
         text-decoration: none;
     }
 
-    li:last-child {
+    li:hover {
         border: solid 0.75px map-get($basicColors, "appTheme");
     }
 
@@ -49,6 +50,8 @@ header {
 
     li {
         padding: 10px 20px 10px 20px;
+        cursor: pointer;
+        border: solid 0.75px white;
     }
 
     a {
@@ -56,7 +59,7 @@ header {
         text-decoration: none;
     }
 
-    li:first-child {
+    li:hover {
         border: solid 0.75px map-get($basicColors, "fontDark");
     }
 
