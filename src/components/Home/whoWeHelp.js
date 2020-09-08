@@ -15,7 +15,7 @@ function WhoWeHelp() {
         
       </div>
 
-      <p>FUNDACJE ORGANIZACJE ZBORKI</p>
+      <p>FUNDACJE ORGANIZACJE ZBORKIlore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam</p>
       </div>
 
     </section>

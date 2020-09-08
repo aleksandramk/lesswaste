@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link as DomLink} from 'react-router-dom'
 import {Link, animateScroll as scroll } from 'react-scroll';
 
 
@@ -9,7 +9,7 @@ function Menu() {
     <nav className="header-menu">
         <ul className="header-menu-list">
             <li>
-                <Link to='/'> Start </Link>
+                <DomLink to='/'> Start </DomLink>
             </li>
             <li>
                 <Link to='fourSteps' smooth={true} duration={500}>O co chodzi?</Link>
