@@ -18,22 +18,28 @@
 }
 
 .loginForm{
+    
     display: flex;
     flex-direction: column;
     background: map-get($basicColors, "bgGrey");
-    padding:2em 6em 1em 6em;
+    width:18em;
+
+    padding: 1em 3em 2em 3em;
     border-radius: 3px;
     margin:1em;
     
+    
     label{
         display:block;
-        padding-bottom:1em;
-        width:80%;
-        textarea{
-            display:block;
-            
-        }
-        
+        padding:1em;
+        width:100%;  
+    }
+
+    input{
+        background:none;
+        border:none;
+        border-bottom: 0.8px solid #3C3C3C26;
+
     }
 
 }

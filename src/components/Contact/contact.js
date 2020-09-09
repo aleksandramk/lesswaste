@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from './contactForm';
+import ContactFormFormik from './contactFormFormik';
 
 
 
@@ -14,7 +15,7 @@ function Contact() {
          <h3>Skontaktuj się z nami</h3>
              <div><img src="/images/Decoration.svg"/></div>
              
-             <ContactForm/>
+             <ContactFormFormik/>
              
       </div>
  

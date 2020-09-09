@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+
 
 function Login() {
 
-  const[email,setEmail] = useState("");
-  const[password, setPassword]=useState("");
 
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-  }
 
   return (
     <section id="login">
@@ -19,24 +17,51 @@ function Login() {
           <h3>Zaloguj się</h3>
           <div><img src="/images/Decoration.svg"/></div>
 
-          <form onSubmit={handleSubmit} className="loginForm">
-                
-                    <label>Email
-                        <textarea className="form-control" type="email" name="email" value={email}
-                            onChange={e => setEmail(e.target.value)}/>
-                    </label>
+          <Formik
+      initialValues={{ email: '', password: ''}}
+      validationSchema={Yup.object({
+        email: Yup.string()
+          .email('Podany email jest nieprawidłowy!')
+          .required('pole wymagane'),
+        password: Yup.string()
+          .min(6, 'Podane hasło jest za krótkie!')
+          .required('pole wymagane'),
+  
+      })}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+       {formik => (
+         <form onSubmit={formik.handleSubmit} className="loginForm">
+       
+          <label htmlFor="email">Email</label>
+        
+           <input id="email" type="email" {...formik.getFieldProps('email')} />
+           {formik.touched.email && formik.errors.email ? (
+             <div className ="errorMsg">{formik.errors.email}</div>
+           ) : <div className ="correct"> </div>}
 
-                    <label>Hasło
-                        <textarea className="form-control" type="password" name="password" value={password}
-                            onChange={e => setPassword(e.target.value)}/>
-                    </label>
+         <label htmlFor="password">Hasło</label>
 
-                    
-            </form>
+         <input id="password" type="password" {...formik.getFieldProps('password')} />
+           {formik.touched.password && formik.errors.password ? (
+             <div className ="errorMsg">{formik.errors.password}</div>
+           ) : <div className ="correct"> </div>}
+         
+    
+       </form>
+       )}
+    </Formik>
+
+
             <div className="loginButtons">
 
                   <Link to='/register'>Zarejestruj się</Link>
-                  <input className="btn-login" type="submit" value="Zaloguj się"/>
+                  <button className="btn-login" type="submit">Zaloguj się</button>
                   
                 
             </div>
@@ -46,6 +71,6 @@ function Login() {
   </section>
   
   )
-}
+};
 
 export default Login;

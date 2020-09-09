@@ -24,11 +24,13 @@ const ContactForm = () => {
         }
 
         if (errors.length === 0) {
+            
             const newMessage = {
                 name: name,
                 email: email,
                 message: text
             }
+
             fetch(`https://fer-api.coderslab.pl/v1/portfolio/contact`, {
                 method: "POST",
                 body: JSON.stringify(newMessage),
@@ -39,7 +41,7 @@ const ContactForm = () => {
                 .then(response => {
                     if (response.ok) {
                         response.json()
-                            .then(item => console.log(item))
+                            .then(newMessage=> console.log(newMessage))
                     } else {
                         alert(`Nie udało się dodać danych`);
 
@@ -58,8 +60,7 @@ const ContactForm = () => {
                 
                     <label>Wpisz swoje imię
                         <textarea className="form-control" type="text" name="name" value={name}
-                            onChange={e => setName(e.target.value)}/>
-                            
+                            onChange={e => setName(e.target.value)}/>    
                     </label>
                     <p>{errors.name}</p>
 

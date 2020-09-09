@@ -1,56 +1,81 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {  Formik } from 'formik';
+import * as Yup from 'yup';
 
-function Login() {
-
-  const[email,setEmail] = useState("");
-  const[password, setPassword]=useState("");
-
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-  }
+function Register() {
 
   return (
-    <section id="login">
 
-    <div className="container">
+    <section id="register">
+
+     <div className="container">
 
     
-          <h3>Zarejestuj się</h3>
+         <h3>Zarejestuj się</h3>
           <div><img src="/images/Decoration.svg"/></div>
 
-          <form onSubmit={handleSubmit} className="loginForm">
-                
-                    <label>Email
-                        <textarea className="form-control" type="email" name="email" value={email}
-                            onChange={e => setEmail(e.target.value)}/>
-                    </label>
+    <Formik
+      initialValues={{ email: '', password1: '', password2: '' }}
+      validationSchema={Yup.object({
+        email: Yup.string()
+          .email('email niepoprawny')
+          .required('pole wymagane'),
+        password1: Yup.string()
+          .min(6, 'Hasło niepoprawne')
+          .required('pole wymagane'),
+        password2: Yup.string()
+          .min(6, 'Hasło niepoprawne')
+          .oneOf([Yup.ref('password1')], 'Hasło musi być takie samo!')
+          .required('pole wymagane'),
+      })}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+       {formik => (
+         <form onSubmit={formik.handleSubmit} className="registerForm">
+       
+          <label htmlFor="email">Email</label>
+        
+           <input id="email" type="email" {...formik.getFieldProps('email')} />
+           {formik.touched.email && formik.errors.email ? (
+             <div className ="errorMsg">{formik.errors.email}</div>
+           ) : <div className ="correct"> </div>}
 
-                    <label>Hasło
-                        <textarea className="form-control" type="password" name="password" value={password}
-                            onChange={e => setPassword(e.target.value)}/>
-                    </label>
+         <label htmlFor="password1">Hasło</label>
 
-                    <label>Powtórz hasło
-                        <textarea className="form-control" type="password" name="password" value={password}
-                            onChange={e => setPassword(e.target.value)}/>
-                    </label>
-
-                    
-            </form>
-            <div className="loginButtons">
+         <input id="password1" type="password" {...formik.getFieldProps('password1')} />
+           {formik.touched.password1 && formik.errors.password1 ? (
+             <div className ="errorMsg">{formik.errors.password1}</div>
+           ) : <div className ="correct"> </div>}
+         
+         <label htmlFor="password2">Powtórz hasło</label>
+         <input id="password2" type="password" {...formik.getFieldProps('password2')} />
+           {formik.touched.password2 && formik.errors.password2 ? (
+             <div className ="errorMsg">{formik.errors.password2}</div>
+           ) : <div className ="correct"> </div>}
+       </form>
+       )}
+    </Formik>
+ 
+ 
+           <div className="loginButtons">
 
                   <Link to='/login'>Zaloguj się</Link>
-                  <input className="btn-login" type="submit" value="Załóż konto"/>
-                  
+                 <button className="btn-login" type="submit">Załóż konto</button> 
                 
-            </div>
+           </div>
            
-    </div>
+     </div>
 
-  </section>
+   </section>
+  );
   
-  )
+ 
 }
 
-export default Login;
+export default Register;

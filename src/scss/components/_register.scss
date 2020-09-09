@@ -1,0 +1,84 @@
+#register{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    color:map-get($basicColors, "fontDark");
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        margin-top:10em;
+    }
+
+    h3{
+        font-size:3em;
+        padding:1em;
+    }
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    background: map-get($basicColors, "bgGrey");
+    width:18em;
+
+    padding: 1em 3em 2em 3em;
+    border-radius: 3px;
+    margin:1em;
+    
+    
+    label{
+        display:block;
+        padding:1em;
+        width:100%;  
+    }
+
+    input{
+        background:none;
+        border:none;
+        border-bottom: 0.8px solid #3C3C3C26;
+
+    }
+
+}
+
+.loginButtons{
+    width:30%;
+    font-size: 16px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+    a{
+        text-decoration: none;
+        &:visited{
+            color:  map-get($basicColors, "fontDark");
+            text-decoration: none;
+        }
+    }
+
+    button{
+        background:none;
+        cursor: pointer;
+        font-family: $font-base;
+        resize:none;
+        font-weight:400;
+        border: none;
+        font-size:16px;
+        color:map-get($basicColors, "fontDark");
+    }
+}
+
+.errorMsg{
+   
+    height:1.3em;
+    color:red;
+    font-size: 0.9em;
+    border-top: solid red 2px;
+
+}
+
+.correct{
+     height: 1.3em;
+}
