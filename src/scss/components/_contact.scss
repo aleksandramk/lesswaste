@@ -3,12 +3,14 @@
     display: flex;
     justify-content: center;
     color: map-get($basicColors, "fontDark");
+
     .container{
         position: relative;
         justify-content: flex-end;
         &:after{
             content: "";
             background-image: url("/images/Background-Contact-Form.jpg");
+            background-repeat: no-repeat;
             opacity: 0.5;
             top: 0;
             left: 0;
@@ -23,8 +25,8 @@
 .contactForm{
     display:flex;
     flex-direction:column;
-    width:60%;
-    padding:2em;
+    width:70%;
+    padding:1em 1em 1em 2em;
     font-weight: Semibold;
     
     
@@ -45,36 +47,59 @@
         padding-bottom:2em;
     }
 
-    label {
-        display:block;
-    }
-    textarea { 
-        display:block;
-    }
+    
 }
 
 .person-data{
     display:flex;
-    justify-content: space-between;
+    
+    justify-content: flex-start;
+
+.nameBox{
+    width: 50%;
+}
+.emailBox{
+    width: 50%;
+
+}
+    label{
+        display:block;
+        padding-bottom:2em;
+        
+    }
+
+    input{
+        background:none;
+        border:none;
+        border-bottom: 0.8px solid #3C3C3C26;
+        color: map-get($basicColors, "fontLight");
+
+    }
    
 }
 
-.form-control{
-    resize:none;
-    border: none;
-    border-bottom:2px solid  #3C3C3C26;
-    margin-top:1em;
-    color: #3C3C3C26;
-    font-family: $font-base;
-    background: none;
-    &:focus{
-        color: map-get($basicColors, "fontDark");
-    }
-}
+// .form-control{
+//     resize:none;
+//     border: none;
+//     border-bottom:2px solid  #3C3C3C26;
+//     margin-top:1em;
+//     color: #3C3C3C26;
+//     font-family: $font-base;
+//     background: none;
+//     &:focus{
+//         color: map-get($basicColors, "fontDark");
+//     }
+// }
 
 .yourText{
     width:100%;
     height:8em;
+    background:none;
+        border:none;
+        border-bottom: 0.8px solid #3C3C3C26;
+        padding-top:1em;
+        font-family: $font-base;
+        color: map-get($basicColors, "fontLight");
 
 }
 .btn-submit{

@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/register';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from './components/Header/header'
+import Logout from './components/Login/Logout';
 
 
 
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path ="/login" component={Login}/>
         <Route path="/register" component={Register}/>
-        
+        <Route path="/logout" component={Logout}   />     
       </Switch>
 
       

@@ -1,0 +1,40 @@
+#logout{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    color:map-get($basicColors, "fontDark");
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        margin-top:10em;
+        
+    }
+
+    h3{
+        width:30%;
+        font-size:3em;
+        padding:1em;
+        
+        text-align:center;
+    }
+
+    a{
+        text-decoration: none;
+        margin-top:2em;
+        padding: 1em;
+        border: solid 0.8px white;
+
+        &:visited{
+            color:  map-get($basicColors, "fontDark");
+            text-decoration: none;
+        }
+        &:hover{
+            border: solid 0.8px map-get($basicColors, "fontDark");
+            
+        }
+    }
+}
+
+   

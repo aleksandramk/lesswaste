@@ -3,12 +3,11 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 
+const errorsArr = [];
 
 const ContactFormFormik = () => {
     return (
-        <section id="login">
-    
-        <div className="container">
+        <>
     
               <Formik
           initialValues={
@@ -23,8 +22,8 @@ const ContactFormFormik = () => {
 
           validationSchema={Yup.object({
               name: Yup.string()
-              .trim('Podane imię jest nieprawidłowe!')
               .min(3,'Podane imię jest nieprawidłowe!')
+              .matches(/^\s*\S+\s*$/, 'Podane imię jest nieprawidłowe!')
               .required('pole wymagane'),
             email: Yup.string()
               .email('Podany email jest nieprawidłowy!')
@@ -32,13 +31,19 @@ const ContactFormFormik = () => {
             text: Yup.string()
               .min(120, 'Wiadomość musi mieć conajmniej 120 znaków!')
               .required('pole wymagane'),
+            
       
           })}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+     
+
+
+        
+          onSubmit={(values, { setSubmitting,  setFieldError}) => {
+            // setTimeout(() => {
+            //   alert(JSON.stringify(values, null, 2));
+            //   setSubmitting(false);
+            // }, 400);
+            console.log(values);
           }}
         >
            {formik => (
@@ -46,25 +51,33 @@ const ContactFormFormik = () => {
 
                 <div className="person-data">
 
-            <label htmlFor="name">Wpisz swoje imię</label>
+                  <div className="nameBox">
+                  <label htmlFor="name">Wpisz swoje imię</label>
             
             <input id="name" type="text" {...formik.getFieldProps('name')} />
             {formik.touched.name && formik.errors.name ? (
               <div className ="errorMsg">{formik.errors.name}</div>
             ) : <div className ="correct"> </div>}
-           
-              <label htmlFor="email">Wpisz swój email</label>
+
+                  </div>
+
+            <div className="emailBox">
+
+            <label htmlFor="email">Wpisz swój email</label>
             
-               <input id="email" type="email" {...formik.getFieldProps('email')} />
-               {formik.touched.email && formik.errors.email ? (
-                 <div className ="errorMsg">{formik.errors.email}</div>
-               ) : <div className ="correct"> </div>}
+            <input id="email" type="email" {...formik.getFieldProps('email')} />
+            {formik.touched.email && formik.errors.email ? (
+              <div className ="errorMsg">{formik.errors.email}</div>
+            ) : <div className ="correct"> </div>}
+
+            </div>
+           
 
                </div>
     
              <label htmlFor="text">Wpisz swoją wiadomość</label>
     
-             <input id="text" type="text" {...formik.getFieldProps('text')} />
+             <textarea className ="yourText" id="text" type="text" {...formik.getFieldProps('text')} />
                {formik.touched.text && formik.errors.text ? (
                  <div className ="errorMsg">{formik.errors.text}</div>
                ) : <div className ="correct"> </div>}
@@ -78,10 +91,7 @@ const ContactFormFormik = () => {
 
         <button className="btn-submit" type="submit">Wyślij</button>
                
-        </div>
-    
-      </section>
-      
+        </>
       )
     };
 

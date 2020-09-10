@@ -6,7 +6,7 @@ const ContactForm = () => {
     const [email, setEmail] = useState("abc@xyz.pl");
     const [text, setText] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
 
-    const [errors, setErrors] = useState({name:""});
+    const [errors, setErrors] = useState();
     
     const handleSubmit = (e) => {
         e.preventDefault();
