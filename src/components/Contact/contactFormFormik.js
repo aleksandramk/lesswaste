@@ -34,6 +34,8 @@ const ContactFormFormik = () => {
             
       
           })}
+
+          ValidationError
      
 
 
@@ -44,6 +46,10 @@ const ContactFormFormik = () => {
             //   setSubmitting(false);
             // }, 400);
             console.log(values);
+
+
+
+            
           }}
         >
            {formik => (
