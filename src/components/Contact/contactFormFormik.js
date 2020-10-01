@@ -35,22 +35,15 @@ const ContactFormFormik = () => {
       
           })}
 
-          ValidationError
-     
-
-
         
-          onSubmit={(values, { setSubmitting,  setFieldError}) => {
-            // setTimeout(() => {
-            //   alert(JSON.stringify(values, null, 2));
-            //   setSubmitting(false);
-            // }, 400);
-            console.log(values);
-
-
-
+     
+          onSubmit={(values, { setSubmitting }) => {
             
+            
+            console.log(values)
           }}
+
+
         >
            {formik => (
              <form onSubmit={formik.handleSubmit} className="contactForm">
@@ -87,6 +80,8 @@ const ContactFormFormik = () => {
                {formik.touched.text && formik.errors.text ? (
                  <div className ="errorMsg">{formik.errors.text}</div>
                ) : <div className ="correct"> </div>}
+
+               <button className="btn-submit" type="submit">Wyślij</button>
              
         
            </form>
@@ -95,7 +90,7 @@ const ContactFormFormik = () => {
            )}
         </Formik>
 
-        <button className="btn-submit" type="submit">Wyślij</button>
+        
                
         </>
       )

@@ -5,18 +5,21 @@ import Fundations from './pagFundations';
 
 function WhoWeHelp() {
 
-  const [activeType,setActiveType] = useState(false);
+  const [activeType,setActiveType] = useState("fundations");
 
   const whoWeHelpType = [
     {
+        key:"fundations",
         title: "Fundacjom", 
         description: "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują."
     },
     {
+      key:"organizations",
         title: "Organizacjom pozarządowym", 
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
     },
     {
+      key:"local",
         title: "Lokalnym zbiórkom", 
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nisi assumenda ex, qui quam, labore, accusantium autem consectetur minus enim voluptatem nihil?"
     }
@@ -41,12 +44,14 @@ function WhoWeHelp() {
                             <button 
                                 key={key} 
                                 className={`whoWeHelp-type ${activeType === key ? "active" : ""}`}
-                                onClick={() => setActiveType(key)}>
+                                onClick={() => setActiveType(el.key)}>
                                 {el.title}
                             </button>
                           
                         )
                     })}
+
+
 
         </div>
 
@@ -54,9 +59,7 @@ function WhoWeHelp() {
                             
                             </div>
 
-                         <Fundations/>
-                         
-
+                        <Fundations acvtiveFundation={activeType}/>
       </div>
 
                     

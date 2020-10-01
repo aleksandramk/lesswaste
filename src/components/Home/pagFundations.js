@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from "react";
 
 
-const Fundations = () =>{
+const Fundations = ({acvtiveFundation}) =>{
 
-    const API_URL = `http://localhost:3000/`; 
+    const API_URL = `http://localhost:3005`; 
    
-    const[posts,setPosts] = useState({});
+    const[posts,setPosts] = useState(null);
     const[currentPage,setCurrentPage] =useState(1);
     const[postsPerPage, setPostsPerPage] = useState(3);
 
+    
+
     useEffect(() => {
-        fetch(`${API_URL}/posts`)
+        fetch(`${API_URL}/${acvtiveFundation}`)
             .then(response => response.json())
             .then(fetchedPosts => {
                 console.log(fetchedPosts);
-                setPosts(fetchedPosts)
+                setPosts(fetchedPosts);
+                setCurrentPage(1);
             })
             .catch(err => console.error(err));
-    }, []);
+
+            
+    }, [acvtiveFundation]);
 
 
 const handleClick =(e) => {
@@ -27,15 +32,15 @@ const handleClick =(e) => {
 
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
-const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+const currentPosts = posts?.slice(indexOfFirstPost, indexOfLastPost);
 
-const renderPosts = currentPosts.map((post, index) => {
-  return <li key={index}>{post}</li>;
+const renderPosts = currentPosts?.map((post, index) => {
+  return <li key={index}>{post.header}</li>;
 });
 
 // Logic for displaying page numbers
 const pageNumbers = [];
-for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
+for (let i = 1; i <= Math.ceil(posts?.length / postsPerPage); i++) {
   pageNumbers.push(i);
 }
 
