@@ -1,9 +1,9 @@
-Page layout
+# Page layout
 
 Project less-waste-app done during Portfolio Lab (CodersLab).
 
-used:
+## used:
 
--React
--React Router 
--Formik
+> React <br>
+> React Router <br>
+> Formik <br>
