@@ -35,7 +35,19 @@ const indexOfFirstPost = indexOfLastPost - postsPerPage;
 const currentPosts = posts?.slice(indexOfFirstPost, indexOfLastPost);
 
 const renderPosts = currentPosts?.map((post, index) => {
-  return <li key={index}>{post.header}</li>;
+  return (
+
+    <div className="whoWeHelp-post" key={index}>
+      <div>
+        <h3>{post.header}</h3>
+        <p>{post.subheader}</p>
+      </div>
+      
+      <p>{post.desc}</p>
+    </div>
+
+  )
+  
 });
 
 // Logic for displaying page numbers
@@ -45,6 +57,7 @@ for (let i = 1; i <= Math.ceil(posts?.length / postsPerPage); i++) {
 }
 
 const renderPageNumbers = pageNumbers.map(number => {
+  
   return (
     <li
       key={number}

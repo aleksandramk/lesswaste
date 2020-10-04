@@ -36,6 +36,8 @@ function WhoWeHelp() {
         <h3>Komu pomagamy?</h3>
         <div><img src="/images/Decoration.svg"/></div>
 
+        </div>
+
         <div className= "whoWeHelp-btns">
 
         {whoWeHelpType.map( (el, key) => {
@@ -56,11 +58,12 @@ function WhoWeHelp() {
         </div>
 
         <div className="type-description">
+          
                             
                             </div>
 
                         <Fundations acvtiveFundation={activeType}/>
-      </div>
+      
 
                     
 

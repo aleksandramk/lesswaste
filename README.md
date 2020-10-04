@@ -1,3 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Page layout
 
-Project less-waste-app based on Portfolio Lab (CodersLab).
+Project less-waste-app done during Portfolio Lab (CodersLab).
+
+used:
+
+-React
+-React Router 
+-Formik
